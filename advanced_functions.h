@@ -42,6 +42,7 @@ int ors_backup_command(const char* backup_path, const char* options);
 unsigned long long gettime_nsec();
 long long timenow_usec(void);
 long long timenow_msec(void);
+int is_time_interval_passed(long long msec_interval);
 char* readlink_device_blk(const char* Path);
 unsigned long Get_File_Size(const char* Path);
 unsigned long long Get_Folder_Size(const char* Path);
@@ -51,7 +52,7 @@ void delete_a_file(const char* filename);
 void ensure_directory(const char* dir); // in nandroid.c
 int is_path_ramdisk(const char* path);
 int copy_a_file(const char* file_in, const char* file_out);
-char* read_file_to_buffer(const char* filepath);
+char* read_file_to_buffer(const char* filepath, unsigned long *len);
 char* BaseName(const char* path);
 char* DirName(const char* path);
 
